@@ -1,0 +1,41 @@
+@use '@angular/material' as mat;
+@use '../../../../styles' as metronomics;
+
+:host ::ng-deep {
+    .mn-sidenav-icon {
+        $host: &;
+
+        &__link {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 5px;
+            min-height: 35px;
+
+            &__icon {
+                width: 20px;
+                height: 20px;
+                overflow: hidden;
+                fill: mat.get-theme-color(metronomics.$light-theme, primary, 100);
+            }
+
+            &:hover {
+                background-color: mat.get-theme-color(metronomics.$light-theme, primary, 50);
+
+                #{$host}__link__icon {
+                    fill: mat.get-theme-color(metronomics.$light-theme, secondary, 50);
+                }
+            }
+        }
+    }
+}
+
+::ng-deep {
+    .mn-sidenav-icon__tooltip {
+        margin-left: 15px;
+
+        .mdc-tooltip__surface {
+            background-color: mat.get-theme-color(metronomics.$light-theme, primary, 35);
+        }
+    }
+}

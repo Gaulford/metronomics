@@ -1,0 +1,28 @@
+@use '@angular/material' as mat;
+@use '../../../../styles' as metronomics;
+
+
+:host ::ng-deep {
+    .mn-sidenav-main {
+        display: block;
+        border-right: solid 1px mat.get-theme-color(metronomics.$light-theme, tertiary, 35);
+        background-color: mat.get-theme-color(metronomics.$light-theme, primary, 40);
+        box-sizing: border-box;
+        max-width: 70px;
+        padding: 25px 17px;
+        height: 100vh;
+
+        &__column {
+            display: flex;
+            height: 100%;
+            flex-direction: column;
+            justify-content: space-between;
+
+            &__main {
+                overflow-y: auto;
+                flex-grow: 1;
+                flex-shrink: 0;
+            }
+        }
+    }
+}

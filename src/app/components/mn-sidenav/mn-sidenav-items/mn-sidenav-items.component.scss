@@ -1,0 +1,13 @@
+@use '@angular/material' as mat;
+@use '../../../../styles' as metronomics;
+
+:host ::ng-deep {
+    .mn-sidenav-items {
+        &__list {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
